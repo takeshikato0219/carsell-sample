@@ -164,6 +164,7 @@ export const useCustomerStore = create<CustomerStore>()(
 }),
     {
       name: 'customer-store',
+      version: 2, // バージョンを更新してキャッシュをクリア
       partialize: (state) => ({
         customers: state.customers,
         isInitialized: state.isInitialized,
