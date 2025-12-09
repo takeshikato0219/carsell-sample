@@ -19,12 +19,12 @@ import { MailModule } from './modules/mail/mail.module';
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
-        type: 'postgres',
-        host: configService.get('DATABASE_HOST'),
-        port: configService.get('DATABASE_PORT'),
-        username: configService.get('DATABASE_USER'),
-        password: configService.get('DATABASE_PASSWORD'),
-        database: configService.get('DATABASE_NAME'),
+        type: 'mysql',
+        host: configService.get('DB_HOST') || configService.get('DATABASE_HOST'),
+        port: parseInt(configService.get('DB_PORT') || configService.get('DATABASE_PORT') || '3306'),
+        username: configService.get('DB_USERNAME') || configService.get('DATABASE_USER'),
+        password: configService.get('DB_PASSWORD') || configService.get('DATABASE_PASSWORD'),
+        database: configService.get('DB_DATABASE') || configService.get('DATABASE_NAME'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: configService.get('NODE_ENV') === 'development',
         logging: configService.get('NODE_ENV') === 'development',
