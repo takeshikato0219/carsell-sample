@@ -1,0 +1,56 @@
+[
+  {
+    "color_id": 1,
+    "color_name": "オリジナルツートン",
+    "applicable_vehicles": "",
+    "option_price": 0
+  },
+  {
+    "color_id": 2,
+    "color_name": "ホワイト",
+    "applicable_vehicles": "ハイエース　ﾜｺﾞﾝGL・ｸﾞﾗﾝﾄﾞｷｬﾋﾞﾝには設定なし",
+    "option_price": 0
+  },
+  {
+    "color_id": 3,
+    "color_name": "シルバーマイカ　メタリック",
+    "applicable_vehicles": "ハイエース・タウンエース",
+    "option_price": 0
+  },
+  {
+    "color_id": 4,
+    "color_name": "ホワイトパール　ｸﾘｽﾀﾙｼｬｲﾝ",
+    "applicable_vehicles": "ハイエース　特装車・ワゴンＧＬ",
+    "option_price": 30000
+  },
+  {
+    "color_id": 5,
+    "color_name": "ベージュメタリック",
+    "applicable_vehicles": "ハイエース　特装車・ｸﾞﾗﾝﾄﾞｷｬﾋﾞﾝ",
+    "option_price": 0
+  },
+  {
+    "color_id": 6,
+    "color_name": "ラグジュアリーパールトーニング",
+    "applicable_vehicles": "ハイエース　ｸﾞﾗﾝﾄﾞｷｬﾋﾞﾝのみ",
+    "option_price": 70000
+  },
+  {
+    "color_id": 7,
+    "color_name": "ブラック",
+    "applicable_vehicles": "ハイエース　ワゴンＧＬ・ナローハイルーフＧＬＰ",
+    "option_price": 0
+  },
+  {
+    "color_id": 8,
+    "color_name": "シルバー",
+    "applicable_vehicles": "",
+    "option_price": 0
+  },
+  {
+    "color_id": 9,
+    "color_name": "ホワイトパール",
+    "applicable_vehicles": "",
+    "option_price": 0
+  }
+]

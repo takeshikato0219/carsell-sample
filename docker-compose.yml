@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: katomo_postgres
+    environment:
+      POSTGRES_USER: katomo
+      POSTGRES_PASSWORD: katomo_dev_password
+      POSTGRES_DB: katomo_db
+    ports:
+      - "4432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U katomo"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: katomo_redis
+    ports:
+      - "4379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # MinIO for local file storage (S3 compatible)
+  minio:
+    image: minio/minio:latest
+    container_name: katomo_minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: katomo
+      MINIO_ROOT_PASSWORD: katomo_minio_password
+    ports:
+      - "4900:9000"
+      - "4901:9001"
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+volumes:
+  postgres_data:
+  redis_data:
+  minio_data:

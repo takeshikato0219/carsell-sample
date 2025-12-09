@@ -1,0 +1,65 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+*.log
+
+# Next.js
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# Production
+dist/
+build/
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Database
+*.sqlite
+*.db
+
+# Docker
+docker-compose.override.yml
+
+# OS
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Backups (except .gitkeep)
+backups/*.sql
+backups/*.sql.gz
+backups/*.json
+backups/railway/*.sql
+backups/railway/*.sql.gz
+backups/railway/*.json
+!backups/.gitkeep
+!backups/railway/.gitkeep

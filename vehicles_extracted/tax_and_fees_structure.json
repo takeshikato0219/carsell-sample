@@ -1,0 +1,151 @@
+{
+  "税金等": {
+    "items": [
+      {
+        "name": "環境性能割",
+        "amount": 97000,
+        "taxable": false,
+        "description": "車両本体価格に基づいて計算される税金"
+      },
+      {
+        "name": "自動車重量税",
+        "amount": 24600,
+        "taxable": false,
+        "description": "車両重量に基づく税金"
+      },
+      {
+        "name": "自賠責保険（25ヶ月）",
+        "amount": 20580,
+        "taxable": false,
+        "description": "強制保険（25ヶ月分）"
+      }
+    ],
+    "subtotal_label": "税金等 小計",
+    "subtotal_marker": "②",
+    "subtotal_amount": 142180
+  },
+  "販売諸費用": {
+    "課税分": {
+      "items": [
+        {
+          "name": "検査・登録手続準備費用",
+          "amount": 20000,
+          "taxable": true,
+          "description": "車両登録に必要な手続き費用"
+        },
+        {
+          "name": "車庫証明手続代行費用",
+          "amount": 0,
+          "taxable": true,
+          "description": "お客様が自分で取得する場合は0円",
+          "note": "お客様"
+        },
+        {
+          "name": "県外登録代行書士費用",
+          "amount": 0,
+          "taxable": true,
+          "description": "県外登録の場合のみ発生"
+        },
+        {
+          "name": "下取査定 諸手続代行費用",
+          "amount": 0,
+          "taxable": true,
+          "description": "下取車がある場合のみ発生"
+        },
+        {
+          "name": "納車準備費用",
+          "amount": 28000,
+          "taxable": true,
+          "description": "納車前の整備・清掃費用"
+        },
+        {
+          "name": "納車送料",
+          "amount": 0,
+          "taxable": true,
+          "description": "お引取りの場合は0円",
+          "note": "お引取り"
+        },
+        {
+          "name": "予備検査費用",
+          "amount": 65000,
+          "taxable": true,
+          "description": "予備検査が必要な場合の費用"
+        }
+      ],
+      "subtotal_label": "課税分 小計",
+      "subtotal_marker": "(D)",
+      "subtotal_amount": 113000,
+      "consumption_tax": 11300
+    },
+    "非課税分": {
+      "items": [
+        {
+          "name": "検査・登録（預かり法定費用）",
+          "amount": 3200,
+          "taxable": false,
+          "description": "陸運局等に支払う法定費用"
+        },
+        {
+          "name": "車庫証明（預かり法定費用）",
+          "amount": 0,
+          "taxable": false,
+          "description": "警察署に支払う法定費用"
+        },
+        {
+          "name": "下取車（預かり法定費用）",
+          "amount": 0,
+          "taxable": false,
+          "description": "下取車の名義変更等の法定費用"
+        },
+        {
+          "name": "リサイクル料金",
+          "amount": 0,
+          "taxable": false,
+          "description": "自動車リサイクル料金",
+          "note": "別途"
+        }
+      ],
+      "subtotal_label": "非課税分 小計",
+      "subtotal_amount": 3200
+    },
+    "subtotal_label": "販売諸費用 小計",
+    "subtotal_marker": "③",
+    "subtotal_amount": 116200
+  },
+  "合計計算": {
+    "諸費用計": {
+      "label": "諸費用計【②＋③】",
+      "marker": "④",
+      "formula": "税金等小計 + 販売諸費用小計",
+      "amount": 258380
+    },
+    "車両小計": {
+      "label": "合計【①＋④】",
+      "marker": "⑤",
+      "formula": "車両小計 + 諸費用計",
+      "description": "税抜合計"
+    },
+    "消費税合計": {
+      "label": "消費税合計【A＋B＋C＋D】",
+      "marker": "⑥",
+      "formula": "車両本体消費税 + オプション消費税 + 基本部品消費税 + 課税分諸費用消費税",
+      "description": "全ての課税対象項目の消費税合計"
+    },
+    "現金価格合計": {
+      "label": "現金価格合計【⑤＋⑥】",
+      "marker": "⑦",
+      "formula": "合計 + 消費税合計",
+      "description": "税込総額"
+    },
+    "下取車価格": {
+      "label": "下取車価格",
+      "marker": "⑧",
+      "description": "下取車がある場合の査定額"
+    },
+    "総合計": {
+      "label": "総合計【⑦－⑧】",
+      "formula": "現金価格合計 - 下取車価格",
+      "description": "最終支払額"
+    }
+  }
+}
