@@ -25,8 +25,6 @@ const defaultNavigationOrder: PermissionKey[] = [
 
 // デフォルトの管理者ツールナビゲーション順序
 const defaultAdminNavigationOrder: PermissionKey[] = [
-  'adminVehicles',
-  'adminEstimateSettings',
   'adminMarketPrice',
   'adminUserManagement',
   'settings',

@@ -21,8 +21,6 @@ export type PermissionKey =
   | 'chat'                // 社内チャット
   | 'showroomNew'         // 新車展示車ステータス
   | 'showroomUsed'        // 中古車ステータス
-  | 'adminVehicles'       // 車両管理（管理者）
-  | 'adminEstimateSettings' // 見積設定（管理者）
   | 'adminMarketPrice'    // 相場検索（管理者）
   | 'adminUserManagement' // ユーザー管理（管理者）
   | 'settings'            // 設定
@@ -61,8 +59,6 @@ const defaultAdminPermissions: RolePermissions = {
   chat: true,
   showroomNew: true,
   showroomUsed: true,
-  adminVehicles: true,
-  adminEstimateSettings: true,
   adminMarketPrice: true,
   adminUserManagement: true,
   settings: true,
@@ -83,8 +79,6 @@ const defaultManagerPermissions: RolePermissions = {
   chat: true,
   showroomNew: true,
   showroomUsed: true,
-  adminVehicles: false,
-  adminEstimateSettings: true,
   adminMarketPrice: false,
   adminUserManagement: false,
   settings: true,
@@ -105,8 +99,6 @@ const defaultSalesPermissions: RolePermissions = {
   chat: true,
   showroomNew: true,
   showroomUsed: true,
-  adminVehicles: false,
-  adminEstimateSettings: false,
   adminMarketPrice: false,
   adminUserManagement: false,
   settings: false,
@@ -312,8 +304,6 @@ export const permissionLabels: Record<PermissionKey, string> = {
   chat: '社内チャット',
   showroomNew: '新車展示車ステータス',
   showroomUsed: '中古車ステータス',
-  adminVehicles: '車両管理',
-  adminEstimateSettings: '見積設定',
   adminMarketPrice: '相場検索',
   adminUserManagement: 'ユーザー管理',
   settings: '設定',
@@ -342,8 +332,6 @@ export const permissionToPath: Record<PermissionKey, string> = {
   chat: '/dashboard/chat',
   showroomNew: '/dashboard/showroom-new',
   showroomUsed: '/dashboard/showroom-used',
-  adminVehicles: '/dashboard/admin/vehicles',
-  adminEstimateSettings: '/dashboard/admin/estimate-settings',
   adminMarketPrice: '/dashboard/admin/market-price',
   adminUserManagement: '/dashboard/admin/users',
   settings: '/dashboard/settings',
