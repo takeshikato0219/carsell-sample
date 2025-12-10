@@ -54,3 +54,19 @@ export function getCategoryName(categoryId: string): string {
 
 // 車両データ配列（空）
 export const vehicles: Vehicle[] = [];
+
+// 車両モデル一覧を取得（ユニークなmodelName）
+export function getVehicleModels(): string[] {
+  const models = new Set(vehicles.map(v => v.modelName));
+  return Array.from(models).sort();
+}
+
+// 特定モデルのグレード（バージョン）一覧を取得
+export function getVehicleGrades(modelName: string): Vehicle[] {
+  return vehicles.filter(v => v.modelName === modelName);
+}
+
+// グレード表示名を取得
+export function getGradeDisplayName(vehicle: Vehicle): string {
+  return vehicle.version || vehicle.modelName;
+}
