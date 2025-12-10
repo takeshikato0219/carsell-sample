@@ -739,7 +739,7 @@ function EstimateEditModal({
   // 検索フィルター適用（全カテゴリ検索用）
   const filteredModels = useMemo(() => {
     if (!vehicleSearchQuery) return vehicleModels
-    return vehicleModels.filter(m =>
+    return vehicleModels.filter((m: string) =>
       m.toLowerCase().includes(vehicleSearchQuery.toLowerCase())
     )
   }, [vehicleModels, vehicleSearchQuery])

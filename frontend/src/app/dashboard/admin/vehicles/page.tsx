@@ -3,7 +3,7 @@
 import { useState, useMemo, useCallback } from 'react'
 import { vehicles as vehicleData, Vehicle, vehicleCategories, getVehicleCategory, getCategoryName } from '@/data/vehicles-data'
 import { vehicleOptions as optionData, VehicleOption } from '@/data/options-data'
-import { Search, Car, Filter, Wrench, ChevronUp, ChevronDown } from 'lucide-react'
+import { Search, Car, Filter, Wrench, ChevronUp, ChevronDown, Trash2 } from 'lucide-react'
 
 // 車両改造カテゴリ（ボディーカテゴリのオプションを車両改造として扱う）
 const modificationCategories = ['ボディー']
@@ -56,6 +56,23 @@ export default function VehicleManagementPage() {
       m.id === id ? { ...m, [field]: value } : m
     ))
   }, [])
+
+  // データ一括削除
+  const handleClearAllData = () => {
+    const confirmMessage = activeTab === 'vehicles'
+      ? `全ての車両データ（${vehicles.length}件）を削除しますか？この操作は元に戻せません。`
+      : `全ての車両改造データ（${modifications.length}件）を削除しますか？この操作は元に戻せません。`
+
+    if (window.confirm(confirmMessage)) {
+      if (activeTab === 'vehicles') {
+        setVehicles([])
+        alert('車両データを全て削除しました')
+      } else {
+        setModifications([])
+        alert('車両改造データを全て削除しました')
+      }
+    }
+  }
 
   // ソート切り替え
   const toggleSort = (field: string) => {
@@ -192,6 +209,13 @@ export default function VehicleManagementPage() {
                 ))}
               </select>
             </div>
+            <button
+              onClick={handleClearAllData}
+              className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium"
+            >
+              <Trash2 className="h-4 w-4" />
+              データ一括削除
+            </button>
           </div>
 
           {/* カテゴリ別車両数 */}
@@ -436,8 +460,8 @@ export default function VehicleManagementPage() {
       {activeTab === 'modifications' && (
         <>
           {/* 検索 */}
-          <div className="mb-4">
-            <div className="relative max-w-md">
+          <div className="mb-4 flex gap-4">
+            <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
                 type="text"
@@ -447,6 +471,13 @@ export default function VehicleManagementPage() {
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
+            <button
+              onClick={handleClearAllData}
+              className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium"
+            >
+              <Trash2 className="h-4 w-4" />
+              データ一括削除
+            </button>
           </div>
 
           {/* 改造数表示 */}

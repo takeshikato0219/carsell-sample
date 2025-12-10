@@ -182,6 +182,30 @@ export default function EstimateSettingsPage() {
     }
   }
 
+  // データ一括削除
+  const handleClearAllData = () => {
+    if (activeTab === 'options') {
+      if (window.confirm(`全てのオプションデータ（${options.length}件）を削除しますか？この操作は元に戻せません。`)) {
+        setOptions([])
+        alert('オプションデータを全て削除しました')
+      }
+    } else if (activeTab === 'fees') {
+      if (window.confirm(`全ての諸費用設定（${feeItems.length}件）を削除しますか？この操作は元に戻せません。`)) {
+        setFeeItems([])
+        updateFeeItems([])
+        alert('諸費用設定を全て削除しました')
+      }
+    } else if (activeTab === 'requiredOptions') {
+      if (window.confirm(`全ての必須オプション設定（${requiredOptionConfigs.length}件）を削除しますか？この操作は元に戻せません。`)) {
+        setRequiredOptionConfigs([])
+        updateRequiredOptions([])
+        setSelectedVehicleBase('')
+        setSelectedOptionIds([])
+        alert('必須オプション設定を全て削除しました')
+      }
+    }
+  }
+
   // 金額フォーマット
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('ja-JP').format(price)
@@ -247,6 +271,13 @@ export default function EstimateSettingsPage() {
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
+            <button
+              onClick={handleClearAllData}
+              className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium"
+            >
+              <Trash2 className="h-4 w-4" />
+              データ一括削除
+            </button>
             <div className="relative min-w-[200px]">
               <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
               <select
@@ -429,13 +460,22 @@ export default function EstimateSettingsPage() {
                 新規見積作成時に自動設定される諸費用の初期値です
               </p>
             </div>
-            <button
-              onClick={() => setShowAddFeeModal(true)}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2"
-            >
-              <Plus className="h-5 w-5" />
-              諸費用項目追加
-            </button>
+            <div className="flex gap-3">
+              <button
+                onClick={handleClearAllData}
+                className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium"
+              >
+                <Trash2 className="h-4 w-4" />
+                データ一括削除
+              </button>
+              <button
+                onClick={() => setShowAddFeeModal(true)}
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2"
+              >
+                <Plus className="h-5 w-5" />
+                諸費用項目追加
+              </button>
+            </div>
           </div>
 
           {/* 諸費用項目リスト */}
@@ -558,14 +598,23 @@ export default function EstimateSettingsPage() {
       {/* 車両ベース必須オプションタブ */}
       {activeTab === 'requiredOptions' && (
         <div className="bg-white rounded-lg shadow-lg p-6">
-          <div className="mb-6">
-            <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-              <Car className="h-5 w-5 text-blue-500" />
-              車両ベース別必須オプション設定
-            </h2>
-            <p className="text-sm text-gray-600 mt-1">
-              車両ベースを選択すると、その車両を選択した際に自動的に追加されるオプションを設定できます
-            </p>
+          <div className="mb-6 flex items-start justify-between">
+            <div>
+              <h2 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                <Car className="h-5 w-5 text-blue-500" />
+                車両ベース別必須オプション設定
+              </h2>
+              <p className="text-sm text-gray-600 mt-1">
+                車両ベースを選択すると、その車両を選択した際に自動的に追加されるオプションを設定できます
+              </p>
+            </div>
+            <button
+              onClick={handleClearAllData}
+              className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-medium"
+            >
+              <Trash2 className="h-4 w-4" />
+              データ一括削除
+            </button>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
