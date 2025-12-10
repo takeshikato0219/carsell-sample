@@ -1390,12 +1390,12 @@ function EstimateEditModal({
 
                   <div className="grid grid-cols-3 gap-3 flex-1 overflow-y-auto content-start">
                     {[...filteredModelsByCategory].sort((a, b) => {
-                      const aMinPrice = Math.min(...getVehicleGrades(a).map(v => v.basePrice))
-                      const bMinPrice = Math.min(...getVehicleGrades(b).map(v => v.basePrice))
+                      const aMinPrice = Math.min(...getVehicleGrades(a).map((v: any) => v.basePrice))
+                      const bMinPrice = Math.min(...getVehicleGrades(b).map((v: any) => v.basePrice))
                       return aMinPrice - bMinPrice
                     }).map((modelName) => {
                       const modelVehicles = getVehicleGrades(modelName)
-                      const minPrice = Math.min(...modelVehicles.map(v => v.basePrice))
+                      const minPrice = Math.min(...modelVehicles.map((v: any) => v.basePrice))
                       return (
                         <button
                           key={modelName}
