@@ -1320,13 +1320,13 @@ export default function CustomerDetailPage() {
       let response = ''
 
       if (userMessage.includes('挨拶') || userMessage.includes('話し方')) {
-        response = `${customer?.name || 'お客様'}への挨拶例:\n\n「お世話になっております。katomotorの○○です。\nその後、キャンピングカーのご検討状況はいかがでしょうか？\n\n前回お話しいただいた${customer?.desiredVehicleType?.[0] || 'お車'}について、新しい情報がございましたのでご連絡いたしました。」`
+        response = `${customer?.name || 'お客様'}への挨拶例:\n\n「お世話になっております。CARSELLの○○です。\nその後、キャンピングカーのご検討状況はいかがでしょうか？\n\n前回お話しいただいた${customer?.desiredVehicleType?.[0] || 'お車'}について、新しい情報がございましたのでご連絡いたしました。」`
       } else if (userMessage.includes('提案') || userMessage.includes('おすすめ')) {
         response = `${customer?.name || 'お客様'}への提案ポイント:\n\n1. **予算${customer?.budget || ''}**に合わせた最適なモデルをご紹介\n2. ${customer?.purchaseTiming || ''}というタイミングに合わせた納期のご提案\n3. 試乗のご案内\n\n「実際にご覧いただくと、サイズ感や使い勝手がよくわかりますよ」とお伝えすると効果的です。`
       } else if (userMessage.includes('クロージング') || userMessage.includes('成約')) {
         response = `成約に向けたアプローチ:\n\n1. 「現在、${customer?.desiredVehicleType?.[0] || 'このモデル'}は人気で在庫が限られております」\n2. 「今月中のご契約で特別価格をご用意できます」\n3. 「ご家族でのご試乗はいかがですか？週末の空き状況をお調べしましょうか」\n\n焦らせすぎず、お客様のペースに合わせることが大切です。`
       } else if (userMessage.includes('フォロー') || userMessage.includes('久しぶり')) {
-        response = `久しぶりの連絡のコツ:\n\n「ご無沙汰しております。katomotorの○○です。\nその後、お変わりございませんでしょうか？\n\n以前ご興味をお持ちいただいていた${customer?.desiredVehicleType?.[0] || 'キャンピングカー'}ですが、最近新しいモデルが入荷いたしました。\n\nもしよろしければ、改めてご案内させていただけますか？」`
+        response = `久しぶりの連絡のコツ:\n\n「ご無沙汰しております。CARSELLの○○です。\nその後、お変わりございませんでしょうか？\n\n以前ご興味をお持ちいただいていた${customer?.desiredVehicleType?.[0] || 'キャンピングカー'}ですが、最近新しいモデルが入荷いたしました。\n\nもしよろしければ、改めてご案内させていただけますか？」`
       } else {
         response = `ご質問ありがとうございます。\n\n${customer?.name || 'お客様'}との会話では、以下の点を意識してみてください：\n\n1. **傾聴**: お客様のニーズをしっかり聞く\n2. **共感**: 「なるほど、○○ですね」と相槌\n3. **提案**: お客様のニーズに合った提案\n\n具体的なシーン（挨拶、提案、クロージングなど）を教えていただければ、より詳しくアドバイスできます。`
       }
@@ -1367,23 +1367,23 @@ export default function CustomerDetailPage() {
   const applyEmailTemplate = (template: 'followup' | 'thanks' | 'quote') => {
     const templates = {
       followup: {
-        subject: '【katomotor】お問い合わせありがとうございます',
+        subject: '【CARSELL】お問い合わせありがとうございます',
         body: `${customer?.name} 様
 
-この度はkatomotorにお問い合わせいただき、誠にありがとうございます。
+この度はCARSELLにお問い合わせいただき、誠にありがとうございます。
 
 お問い合わせいただいた件について、ご案内させていただきます。
 
 ご不明な点がございましたら、お気軽にお問い合わせください。
 
 ---
-katomotor 営業担当`,
+CARSELL 営業担当`,
       },
       thanks: {
-        subject: '【katomotor】ご来店ありがとうございました',
+        subject: '【CARSELL】ご来店ありがとうございました',
         body: `${customer?.name} 様
 
-先日はkatomotorにご来店いただき、誠にありがとうございました。
+先日はCARSELLにご来店いただき、誠にありがとうございました。
 
 ご検討中のキャンピングカーについて、ご質問やご要望がございましたら
 お気軽にご連絡ください。
@@ -1391,21 +1391,21 @@ katomotor 営業担当`,
 今後ともよろしくお願いいたします。
 
 ---
-katomotor 営業担当`,
+CARSELL 営業担当`,
       },
       quote: {
-        subject: '【katomotor】お見積書のご送付',
+        subject: '【CARSELL】お見積書のご送付',
         body: `${customer?.name} 様
 
 お世話になっております。
-katomotorの営業担当でございます。
+CARSELLの営業担当でございます。
 
 ご依頼いただいておりましたお見積書を添付にてお送りいたします。
 
 ご不明な点がございましたら、お気軽にお問い合わせください。
 
 ---
-katomotor 営業担当`,
+CARSELL 営業担当`,
       },
     }
     const t = templates[template]

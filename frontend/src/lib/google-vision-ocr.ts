@@ -767,7 +767,7 @@ export function parseOCRTextToSurveyData(ocrText: string): Record<string, any> {
     }
   }
 
-  // katomotorを知ったきっかけを検出（丸印検出対応）
+  // CARSELLを知ったきっかけを検出（丸印検出対応）
   const sources = ['展示会', 'イベント', 'ホームページ', 'HP', 'X', 'Twitter', 'Instagram', 'YouTube', '知人の紹介', '紹介']
   const circledSources = sources.filter(source => hasCircleNear(source, ocrText))
   if (circledSources.length > 0) {

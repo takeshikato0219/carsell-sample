@@ -109,7 +109,7 @@ const sampleUsers: ManagedUser[] = [
   {
     id: 'user-1',
     name: '管理者',
-    email: 'admin@katomo.jp',
+    email: 'admin@carsell.com',
     password: 'admin123',
     role: UserRole.ADMIN,
     color: '#3B82F6',
@@ -120,7 +120,7 @@ const sampleUsers: ManagedUser[] = [
   {
     id: 'user-2',
     name: '目黒',
-    email: 'meguro@katomo.jp',
+    email: 'meguro@carsell.com',
     password: 'meguro123',
     role: UserRole.MANAGER,
     color: '#EF4444',
@@ -131,7 +131,7 @@ const sampleUsers: ManagedUser[] = [
   {
     id: 'user-3',
     name: '野島',
-    email: 'nojima@katomo.jp',
+    email: 'nojima@carsell.com',
     password: 'nojima123',
     role: UserRole.SALES,
     color: '#22C55E',
@@ -142,7 +142,7 @@ const sampleUsers: ManagedUser[] = [
   {
     id: 'user-4',
     name: '高野晴香',
-    email: 'takano@katomo.jp',
+    email: 'takano@carsell.com',
     password: 'takano123',
     role: UserRole.SALES,
     color: '#F59E0B',

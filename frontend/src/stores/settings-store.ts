@@ -256,7 +256,7 @@ const defaultCompany: CompanySettings = {
   phone: 'XX-XXXX-XXXX',
   fax: '',
   email: '',
-  website: 'www.katomotor.com',
+  website: 'www.carsell.com',
   logoUrl: '',
   bankName: '○○銀行',
   bankBranch: '○○支店',

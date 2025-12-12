@@ -8,11 +8,11 @@ import { UserRole } from '@/types'
 // モックアカウント（バックエンドなしでも動作）
 const MOCK_ACCOUNTS = [
   {
-    email: 'admin@katomo.com',
+    email: 'admin@carsell.com',
     password: 'admin123',
     user: {
       id: 'admin-1',
-      email: 'admin@katomo.com',
+      email: 'admin@carsell.com',
       name: '管理者',
       role: UserRole.ADMIN,
       avatarUrl: undefined,
@@ -22,11 +22,11 @@ const MOCK_ACCOUNTS = [
     }
   },
   {
-    email: 'manager@katomo.com',
+    email: 'manager@carsell.com',
     password: 'manager123',
     user: {
       id: 'manager-1',
-      email: 'manager@katomo.com',
+      email: 'manager@carsell.com',
       name: '目黒',
       role: UserRole.MANAGER,
       avatarUrl: undefined,
@@ -36,11 +36,11 @@ const MOCK_ACCOUNTS = [
     }
   },
   {
-    email: 'sales@katomo.com',
+    email: 'sales@carsell.com',
     password: 'sales123',
     user: {
       id: 'sales-1',
-      email: 'sales@katomo.com',
+      email: 'sales@carsell.com',
       name: '野島',
       role: UserRole.SALES,
       avatarUrl: undefined,
@@ -51,11 +51,11 @@ const MOCK_ACCOUNTS = [
   },
   // 旧デモアカウント互換
   {
-    email: 'sales1@katomo.com',
+    email: 'sales1@carsell.com',
     password: 'password123',
     user: {
       id: '1',
-      email: 'sales1@katomo.com',
+      email: 'sales1@carsell.com',
       name: '山田太郎',
       role: UserRole.SALES,
       avatarUrl: undefined,
@@ -93,9 +93,9 @@ export default function LoginPage() {
         {/* ロゴ */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-slate-800 tracking-tight mb-2">
-            katomotor
+            CARSELL
           </h1>
-          <p className="text-sm text-slate-500">営業支援ツール</p>
+          <p className="text-sm text-slate-500">CARSELL</p>
         </div>
 
         <div className="bg-white rounded-xl shadow-lg p-8 border border-slate-200">
@@ -140,15 +140,15 @@ export default function LoginPage() {
             <div className="grid gap-2 text-sm bg-google-gray-50 p-3 rounded-md border border-google-gray-200">
               <div className="flex justify-between items-center">
                 <span className="chip-md-red text-xs">管理者</span>
-                <span className="text-google-gray-600">admin@katomo.com / admin123</span>
+                <span className="text-google-gray-600">admin@carsell.com / admin123</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="chip-md-yellow text-xs">マネージャー</span>
-                <span className="text-google-gray-600">manager@katomo.com / manager123</span>
+                <span className="text-google-gray-600">manager@carsell.com / manager123</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="chip-md-green text-xs">営業</span>
-                <span className="text-google-gray-600">sales@katomo.com / sales123</span>
+                <span className="text-google-gray-600">sales@carsell.com / sales123</span>
               </div>
             </div>
           </div>

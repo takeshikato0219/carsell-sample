@@ -116,7 +116,7 @@ const demoContract = {
   salesRep: {
     name: '山田 太郎',
     phone: '090-0000-0000',
-    email: 'yamada@katomo.jp'
+    email: 'yamada@carsell.com'
   },
   status: 'preparing', // 'ordered' | 'preparing' | 'ready' | 'delivered'
   options: ['純正ナビ', 'バックカメラ', 'ETC2.0', 'フロアマット']

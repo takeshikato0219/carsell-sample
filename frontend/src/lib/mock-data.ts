@@ -1727,7 +1727,7 @@ export const mockActivities: Activity[] = [
     type: ActivityType.EMAIL,
     title: '見積書送付',
     content: 'ご依頼いただいた見積書を送付いたしました。ご不明点がございましたらお気軽にお問い合わせください。',
-    emailSubject: '【katomotor】お見積書のご送付',
+    emailSubject: '【CARSELL】お見積書のご送付',
     createdBy: 'user1',
     createdByName: '営業担当A',
     createdAt: '2024-01-22T09:00:00Z',

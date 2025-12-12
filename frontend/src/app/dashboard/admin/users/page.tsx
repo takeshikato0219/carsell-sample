@@ -103,7 +103,7 @@ export default function UserManagementPage() {
 
     addUser({
       name: rep.name,
-      email: `${rep.loginId}@katomotor.com`,
+      email: `${rep.loginId}@carsell.com`,
       password: password,
       role: UserRole.SALES,
       color: hexColor,
@@ -113,7 +113,7 @@ export default function UserManagementPage() {
     // 登録後、旧データから削除
     removeSalesRep(rep.id)
 
-    alert(`「${rep.name}」をユーザー一覧に登録しました。\n\nメール: ${rep.loginId}@katomotor.com\nパスワード: ${password}`)
+    alert(`「${rep.name}」をユーザー一覧に登録しました。\n\nメール: ${rep.loginId}@carsell.com\nパスワード: ${password}`)
   }
 
   // 選択した営業候補を一括登録
@@ -140,7 +140,7 @@ export default function UserManagementPage() {
 
       addUser({
         name: rep.name,
-        email: `${rep.loginId}@katomotor.com`,
+        email: `${rep.loginId}@carsell.com`,
         password: password,
         role: UserRole.SALES,
         color: hexColor,
@@ -149,7 +149,7 @@ export default function UserManagementPage() {
 
       removeSalesRep(rep.id)
       registered++
-      results.push(`${rep.name}: ${rep.loginId}@katomotor.com / ${password}`)
+      results.push(`${rep.name}: ${rep.loginId}@carsell.com / ${password}`)
     })
 
     setSelectedCandidates(new Set())
@@ -484,7 +484,7 @@ export default function UserManagementPage() {
                   <p className="font-medium mb-1">ユーザー一覧への統合</p>
                   <ul className="list-disc list-inside space-y-1 text-blue-700">
                     <li>チェックを入れて「ユーザー一覧に登録」をクリックすると、正式なユーザーとして登録されます</li>
-                    <li>登録時にメールアドレス（ログインID@katomotor.com）とパスワードが自動生成されます</li>
+                    <li>登録時にメールアドレス（ログインID@carsell.com）とパスワードが自動生成されます</li>
                     <li>登録後、旧データは自動的に削除されます</li>
                   </ul>
                 </div>
@@ -710,7 +710,7 @@ export default function UserManagementPage() {
                   value={newUser.email}
                   onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="例: yamada@katomo.jp"
+                  placeholder="例: yamada@carsell.com"
                 />
               </div>
 

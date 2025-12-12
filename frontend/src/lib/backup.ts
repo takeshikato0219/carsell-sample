@@ -1,8 +1,8 @@
 // バックアップ・リストアユーティリティ
 
 // 自動バックアップ用のキー
-const AUTO_BACKUP_KEY = 'katomo-auto-backup'
-const AUTO_BACKUP_HISTORY_KEY = 'katomo-backup-history'
+const AUTO_BACKUP_KEY = 'carsell-auto-backup'
+const AUTO_BACKUP_HISTORY_KEY = 'carsell-backup-history'
 const MAX_AUTO_BACKUPS = 5 // 自動バックアップの最大保持数
 
 // localStorageのキー一覧
@@ -81,7 +81,7 @@ export function downloadBackup(): void {
 
   const date = new Date()
   const dateStr = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}_${String(date.getHours()).padStart(2, '0')}${String(date.getMinutes()).padStart(2, '0')}`
-  const filename = `katomo_backup_${dateStr}.json`
+  const filename = `carsell_backup_${dateStr}.json`
 
   const a = document.createElement('a')
   a.href = url
@@ -286,7 +286,7 @@ export function downloadSingleStoreBackup(key: StorageKey): void {
 
   const date = new Date()
   const dateStr = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}`
-  const filename = `katomo_${key}_${dateStr}.json`
+  const filename = `carsell_${key}_${dateStr}.json`
 
   const a = document.createElement('a')
   a.href = url
@@ -450,7 +450,7 @@ export function downloadAutoBackup(backupId: string): void {
 
   const date = new Date(backup.createdAt)
   const dateStr = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}_${String(date.getHours()).padStart(2, '0')}${String(date.getMinutes()).padStart(2, '0')}`
-  const filename = `katomo_backup_${dateStr}.json`
+  const filename = `carsell_backup_${dateStr}.json`
 
   const anchor = document.createElement('a')
   anchor.href = url

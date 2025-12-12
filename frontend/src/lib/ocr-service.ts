@@ -188,7 +188,7 @@ async function simulateTesseractOCR(
     strengths: ['phone', 'email', 'age'],
     data: {
       phone: '090-5432-2666',
-      email: 'takeshi@katomotor.co.jp',
+      email: 'takeshi@carsell.com',
       age: 34,
     }
   }
@@ -216,7 +216,7 @@ async function simulateAWSTextractOCR(
 
   // 画像から丸印/チェックがついている項目を検出
   // ・キャンピングカーショー: 「初めて」に丸
-  // ・katomotorを知ったきっかけ: 「ホームページ」に丸
+  // ・CARSELLを知ったきっかけ: 「ホームページ」に丸
   // ・希望車種タイプ: 「ハイエースベース」「キャラバンベース」に丸
   // ・納車時期: 「2年以内」に丸
   // ・予算: 「600万円以内」に丸

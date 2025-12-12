@@ -43,7 +43,7 @@ export async function GET(
     if (format === 'download') {
       const date = new Date(backup.created_at)
       const dateStr = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}_${String(date.getHours()).padStart(2, '0')}${String(date.getMinutes()).padStart(2, '0')}`
-      const filename = `katomo_cloud_backup_${dateStr}.json`
+      const filename = `carsell_backup_${dateStr}.json`
 
       return new NextResponse(JSON.stringify(parsedData, null, 2), {
         status: 200,
